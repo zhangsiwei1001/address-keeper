@@ -1,0 +1,49 @@
+name: 平台适配反馈
+description: 某个购物 App 的地址页跑不通 / 判定不准，请用这个模板
+title: "[适配] <App名称> - <现象>"
+labels: ["platform"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        提交前请确认：**已删除真实姓名、小区名、门牌号、完整手机号**。
+        示例：把「示例小区3栋2单元501」改成「<小区><楼栋><单元><门牌>」。
+  - type: input
+    id: app
+    attributes:
+      label: App 名称与版本
+      placeholder: 淘宝 10.x.x
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: 手机型号与系统
+      placeholder: 小米 15 / HyperOS 2.0 / Android 15
+    validations:
+      required: true
+  - type: dropdown
+    id: symptom
+    attributes:
+      label: 现象
+      options:
+        - 自动导航失败（没点进收货地址页）
+        - 页面进去了但读不到任何地址（疑似 H5）
+        - 读到了但判定为「需人工确认」
+        - 「设为默认」点不中
+        - 脚本崩溃 / 卡住
+    validations:
+      required: true
+  - type: textarea
+    id: raw
+    attributes:
+      label: 页面原始文本（脱敏后）
+      description: 从结果 CSV 的「页面原始文本」列复制，务必先删掉真实信息
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: 补充信息
+      description: 截图（请打码）、日志片段、你的 NEW_KEYWORDS / OLD_KEYWORDS 结构（不要贴真实地址）

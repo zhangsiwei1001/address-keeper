@@ -1,0 +1,7 @@
+# 统一行尾，避免在 Windows 上提交 CRLF 干扰 diff
+* text=auto eol=lf
+
+*.js   text eol=lf
+*.ino  text eol=lf
+*.md   text eol=lf
+*.csv  text

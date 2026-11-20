@@ -1,0 +1,33 @@
+name: 问题反馈
+description: 功能异常、脚本报错、文档错误
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请勿粘贴含真实姓名、手机号、地址的内容（包括截图）。
+  - type: input
+    id: version
+    attributes:
+      label: 使用的脚本
+      placeholder: autojs/地址管家.js（v0.1）
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: 实际发生了什么
+    validations:
+      required: true
+  - type: textarea
+    id: expect
+    attributes:
+      label: 你期望发生什么
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: 日志片段（脱敏）
+      render: text
